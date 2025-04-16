@@ -33,7 +33,7 @@ namespace Codebase.Components.Player
             _characterController = GetComponent<CharacterController>();
         }
  
-        private void FixedUpdate()
+        private void Update()
         {
             HandleMovement();
             MoveForward();
@@ -83,7 +83,7 @@ namespace Codebase.Components.Player
 
         private void MoveForward()
         {
-            Vector3 forwardMovement = Vector3.forward * (_forwardSpeed * Time.fixedDeltaTime); 
+            Vector3 forwardMovement = Vector3.forward * (_forwardSpeed * Time.deltaTime); 
             _characterController.Move(forwardMovement); 
         }
 
